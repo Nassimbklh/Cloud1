@@ -2,9 +2,9 @@ const { Sequelize } = require('sequelize')
 
 // Database
 const sequelize = new Sequelize(
-  '', // TODO: database connection string
+  "postgres://vniiro_user:motdepass@dpg-clfhjv6f27hc739ckefg-a/vniiro", // TODO: database connection string
   {
-    dialect: 'postgres',
+    dialect: "postgres",
     dialectOptions: {
       ssl: {
         require: true,
@@ -12,11 +12,11 @@ const sequelize = new Sequelize(
       },
     },
     define: {
-      createdAt: 'added',
-      updatedAt: 'updated',
-    }
-  },
-)
+      createdAt: "added",
+      updatedAt: "updated",
+    },
+  }
+);
 
 sequelize.authenticate()
 sequelize.sync()
